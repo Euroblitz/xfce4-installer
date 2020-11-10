@@ -1,14 +1,16 @@
 #!/bin/bash
 
-#Script feito com base no tutorial de instalação do XFCE minimal e personalizado por mim para uso próprio na minha máquina. Sinta-se livre para editá-lo, modificá-lo ou pegar partes dele como quiser. Feito para ser usado com o Debian 10 Netinstall sem garantia de funcionar com Ubuntu, mas pode ser modificado para funcionar com o mesmo. A intenção é deixar o sistema configurado e com os programas que eu mais utilizo e sinto necessário de ter no meu sistema assim que ele é instalado do básico apenas com linha de comando, já que não separo a partição /home do sistema.
+#Script feito com base no tutorial de instalação do XFCE minimal e personalizado por mim para uso próprio na minha máquina. 
+#Sinta-se livre para editá-lo, modificá-lo ou pegar partes dele como quiser. Feito para ser usado com o Debian 10 Netinstall 
+#sem garantia de funcionar com Ubuntu, mas pode ser modificado para funcionar com o mesmo. A intenção é deixar o sistema configurado 
+#e com os programas que eu mais utilizo e sinto necessário de ter no meu sistema assim que ele é instalado do básico apenas com linha 
+#de comando, já que não separo a partição /home do sistema.
 
 #Atualizar a lista de repositórios
 apt-get update
 
 #Suporte NTFS e pacotes básicos/APT
-apt-get install -y sudo wget curl
-apt-get install -y gvfs ntfs-3g
-apt-get install -y neofetch
+apt-get install -y sudo wget curl gvfs ntfs-3g neofetch dialog gpg
 
 #Suporte a pacotes 32-bit e repositório contrib/non-free
 sudo dpkg --add-architecture i386
@@ -24,7 +26,6 @@ apt-get --no-install-recommends install -y lightdm
 apt-get --no-install-recommends install -y qt4-qtconfig
 apt-get --no-install-recommends install -y pulseaudio
 apt-get --no-install-recommends install -y gtk2-engines gtk2-engines-pixbuf
-apt-get install -y qtcurve
 apt-get install -y ffmpeg
 
 #XFCE4 Desktop e programas do DE
